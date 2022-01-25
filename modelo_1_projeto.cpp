@@ -1,11 +1,11 @@
 //============================================================================
 // Name        : projeto_final_orientada.cpp
-// Author      : Ot·vio Augusto Joenck Freire
+// Author      : Ot√°vio Augusto Joenck Freire
 // Version     :
 // Copyright   : Your copyright notice
-// Description : Controlador de Sem·foro com dados aleatÛrios.
-//PolÌtica de sinal aberto para o maior tamanho de fila e analisando
-//o tipo de veÌculo presente na fila
+// Description : Controlador de Sem√°foro com dados aleat√≥rios.
+//Pol√≠tica de sinal aberto para o maior tamanho de fila e analisando
+//o tipo de ve√≠culo presente na fila
 //============================================================================
 
 #include <iostream>
@@ -23,7 +23,7 @@ int car_A=0, car_B=0;
 int caminhao_A=0,caminhao_B=0;
 int moto_A=0,moto_B=0 ;
 
-//classe veÌculos
+//classe ve√≠culos
 class veiculo{
 
 public:
@@ -75,7 +75,7 @@ public:
 
 	}
 
-	//gerador caminh„o: fila B
+	//gerador caminh√£o: fila B
 	int gerador_caminhao_B(){
 
 
@@ -132,7 +132,7 @@ public:
 
 	}
 
-	//gerador caminh„o: fila B
+	//gerador caminh√£o: fila B
 	int gerador_caminhao_B_x(){
 
 
@@ -142,7 +142,7 @@ public:
 
 	}
 
-	//proteÁ„o fila carros A vazia
+	//prote√ß√£o fila carros A vazia
 	int fila_car_A_vazia(){
 		if(in_A_car<0){
 			in_A_car = 0;
@@ -151,7 +151,7 @@ public:
 		return 1;
 	}
 
-	//proteÁ„o fila caminnh„o A vazia
+	//prote√ß√£o fila caminnh√£o A vazia
 	int fila_caminhao_A_vazia(){
 		if(in_A_caminhao<0){
 			in_A_caminhao = 0;
@@ -160,7 +160,7 @@ public:
 		return 1;
 	}
 
-	//proteÁ„o fila moto A vazia
+	//prote√ß√£o fila moto A vazia
 	int fila_moto_A_vazia(){
 		if(in_A_moto<0){
 			in_A_moto = 0;
@@ -169,7 +169,7 @@ public:
 		return 1;
 	}
 
-	//proteÁ„o fila carro B vazia
+	//prote√ß√£o fila carro B vazia
 	int fila_car_B_vazia(){
 		if(in_B_car<0){
 			in_B_car = 0;
@@ -178,7 +178,7 @@ public:
 		return 1;
 	}
 
-	//proteÁ„o fila caminhao B vazia
+	//prote√ß√£o fila caminhao B vazia
 	int fila_caminhao_B_vazia(){
 		if(in_B_caminhao<0){
 			in_B_caminhao = 0;
@@ -187,7 +187,7 @@ public:
 		return 1;
 	}
 
-	//proteÁ„o fila moto B vazia
+	//prote√ß√£o fila moto B vazia
 	int fila_moto_B_vazia(){
 		if(in_B_moto<0){
 			in_B_moto = 0;
@@ -196,7 +196,7 @@ public:
 		return 1;
 	}
 
-	//taxa de saÌda carro A
+	//taxa de sa√≠da carro A
 	int gerador_car_out_A(){
 
 
@@ -205,7 +205,7 @@ public:
 
 	}
 
-	//taxa de saÌda carro B
+	//taxa de sa√≠da carro B
 	int gerador_car_out_B(){
 
 
@@ -216,7 +216,7 @@ public:
 
 	}
 
-	//taxa de saÌda caminhao A
+	//taxa de sa√≠da caminhao A
 	int gerador_caminhao_out_A(){
 
 		tx_A_caminhao = (rand()%15);
@@ -224,7 +224,7 @@ public:
 
 	}
 
-	//taxa de saÌda caminhao B
+	//taxa de sa√≠da caminhao B
 	int gerador_caminhao_out_B(){
 
 
@@ -232,7 +232,7 @@ public:
 		return tx_B_caminhao;
 
 	}
-	//taxa de saÌda moto A
+	//taxa de sa√≠da moto A
 	int gerador_moto_out_A(){
 
 
@@ -243,7 +243,7 @@ public:
 	}
 
 
-	//taxa de saÌda moto B
+	//taxa de sa√≠da moto B
 	int gerador_moto_out_B(){
 
 
@@ -273,13 +273,13 @@ public:
 			return 0;
 	}
 
-	//proteÁ„o de fila vazia A
+	//prote√ß√£o de fila vazia A
 	int fila_vazia_A(){
 		if(carro_A<0)
 			carro_A=0;
 		return carro_A;
 	}
-	//proteÁ„o de fila vazia B
+	//prote√ß√£o de fila vazia B
 	int fila_vazia_B(){
 		if(carro_B<0)
 			carro_B=0;
@@ -290,7 +290,7 @@ public:
 };
 
 //classe do controlador de transito
-//Abertura do sem·foro
+//Abertura do sem√°foro
 class controlador{
 public:
 	char*  controla(int obs){
@@ -314,14 +314,14 @@ public:
 	}
 };
 
-//classe representado o ambiente de observaÁ„o do sistema
+//classe representado o ambiente de observa√ß√£o do sistema
 class ambiente_observacao{
 public:
-	//polÌticas para a abertura dos sem·foros
+	//pol√≠ticas para a abertura dos sem√°foros
 	//priorizando o maior tamanho de fila e o maior
-	//n˙meros de caminhıes na fila
-	//È feito v·rios testes antes de decidir
-	//qual sem·foro abrir.
+	//n√∫meros de caminh√µes na fila
+	//√© feito v√°rios testes antes de decidir
+	//qual sem√°foro abrir.
 	int ambiente_obs(){
 		if(carro_A>carro_B&&caminhao_A>caminhao_B){
 			return 1;
@@ -402,8 +402,8 @@ public:
 
 
 		}
-		//se nenhuma condiÁ„o satisfazer
-		//ser· a fila maior que ter· prioridade
+		//se nenhuma condi√ß√£o satisfazer
+		//ser√° a fila maior que ter√° prioridade
 		else if(carro_A>carro_B){
 			return 1;
 		}
@@ -420,7 +420,7 @@ public:
 
 };
 
-//classe representando a simulaÁ„o do sistema
+//classe representando a simula√ß√£o do sistema
 //o comportamento dele
 class ambiente_simul{
 public:
@@ -429,7 +429,7 @@ public:
 
 			veiculo veic;
 
-			//se a fila estiver vazia, apenas entram veÌculos no sistema
+			//se a fila estiver vazia, apenas entram ve√≠culos no sistema
 			if(carro_A<0){
 				veic.gerador_car_A();
 				in_A_car = in_A_car + car_A;
@@ -463,11 +463,11 @@ public:
 				in_A_car = in_A_car + car_A;
 				//adicioando carros na fila
 				carro_A += car_A;
-				//gerando caminhıes no sistema
+				//gerando caminh√µes no sistema
 				veic.gerador_caminhao_A();
 				//somando a quantidade de carros que entram
 				in_A_caminhao += caminhao_A;
-				//adicioando caminhıes na fila
+				//adicioando caminh√µes na fila
 				carro_A +=caminhao_A;
 				//gerando motos no sistema
 				veic.gerador_moto_A();
@@ -486,21 +486,21 @@ public:
 				in_B_moto +=moto_B;
 				carro_B +=moto_B;
 
-				//gerando taxa de saÌda de carros
+				//gerando taxa de sa√≠da de carros
 				veic.gerador_car_out_A();
 				//retirando carros da fila
 				carro_A -= tx_A_car;
 				//diminuindo o total de carros
 				in_A_car -=tx_A_car;
-				//verifica se a fila de carros est· vazia
+				//verifica se a fila de carros est√° vazia
 				veic.fila_car_A_vazia();
-				//gerando taxa de saÌda de caminhıes
+				//gerando taxa de sa√≠da de caminh√µes
 				veic.gerador_caminhao_out_A();
-				//retirando caminhıes da fila
+				//retirando caminh√µes da fila
 				carro_A -=tx_A_caminhao;
-				//reduz o total de caminhıes
+				//reduz o total de caminh√µes
 				in_A_caminhao -=tx_A_caminhao;
-				//verifica se a fila de caminh„o esta vazia
+				//verifica se a fila de caminh√£o esta vazia
 				veic.fila_caminhao_A_vazia();
 				veic.gerador_moto_out_A();
 				carro_A -=tx_A_moto;
@@ -532,11 +532,11 @@ public:
 				in_A_car = in_A_car + car_A;
 				//adicioando carros na fila
 				carro_A += car_A;
-				//gerando caminhıes no sistema
+				//gerando caminh√µes no sistema
 				veic.gerador_caminhao_A_x();
 				//somando a quantidade de carros que entram
 				in_A_caminhao += caminhao_A;
-				//adicioando caminhıes na fila
+				//adicioando caminh√µes na fila
 				carro_A +=caminhao_A;
 				//gerando motos no sistema
 				veic.gerador_moto_A_x();
@@ -568,11 +568,11 @@ public:
 				in_A_car = in_A_car + car_A;
 				//adicioando carros na fila
 				carro_A += car_A;
-				//gerando caminhıes no sistema
+				//gerando caminh√µes no sistema
 				veic.gerador_caminhao_A_x();
 				//somando a quantidade de carros que entram
 				in_A_caminhao += caminhao_A;
-				//adicioando caminhıes na fila
+				//adicioando caminh√µes na fila
 				carro_A +=caminhao_A;
 				//gerando motos no sistema
 				veic.gerador_moto_A_x();
@@ -648,7 +648,7 @@ int main() {
 
 
 
-	//quando esvaziar ambas as filas o laÁo termina
+	//quando esvaziar ambas as filas o la√ßo termina
 	while(carro_A>0||carro_B>0){
 		obs = amb_obs.ambiente_obs();
 		veic.fila_infinita_A();
@@ -660,7 +660,7 @@ int main() {
 		veic.fila_infinita_B();
 		veic.fila_vazia_A();
 		veic.fila_vazia_B();
-		printf("Tempo = %d, situaÁ„o %s,FILA A = %d,FILA B = %d\n",i,cont.controla(obs),carro_A,carro_B);
+		printf("Tempo = %d, situa√ß√£o %s,FILA A = %d,FILA B = %d\n",i,cont.controla(obs),carro_A,carro_B);
 		i++;
 	}
 
