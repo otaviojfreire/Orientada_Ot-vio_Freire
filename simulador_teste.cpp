@@ -1,6 +1,6 @@
 //============================================================================
 // Name        : simulador_teste.cpp
-// Author      : Ot·vio Augusto Joenck Freire
+// Author      : Ot√°vio Augusto Joenck Freire
 // Version     :
 // Copyright   : Your copyright notice
 // Description :
@@ -13,7 +13,6 @@
 #include "ambienteobs.h"
 #include "VeiSaida.h"
 #include <ctime>
-#define X 4
 #define A 0
 #define B 0
 
@@ -32,18 +31,21 @@ int main() {
 
 
 	unsigned int i =1, soma_a=0,soma_b=0,m=1,x=0,a=0,b=0,sa=0,sb=0,saida_soma=0,entrada_soma;
-	unsigned int saida_A = 0, saida_B=0,entrada_A=0,entrada_B=0;
+	unsigned int saida_A = 0, saida_B=0,entrada_A=0,entrada_B=0,Y=0,X=0;
 	Vehicle *ref_a, *ref_b;
 
-
+	cout<<"Entre com o valor de tentativas: "<<endl;
+	cin>>X;
 
 	while(m<=X){
 
 
 		cout<<"Entre o valor limite de taxa de entrada: "<<endl;
 		cin>>entrada_tx;
-		cout<<"Entre o valor limite de taxa de saÌda: "<<endl;
+		cout<<"Entre o valor limite de taxa de sa√≠da: "<<endl;
 		cin>>saida_tx;
+		cout<<"Entre com o valor de per√≠odos: "<<endl;
+		cin>>Y;
 
 		gerador geradorCarro(entrada_tx);
 		VeiSaida saida(saida_tx);
@@ -77,7 +79,7 @@ int main() {
 		entrada_B += geradorCarro.generate_vehicle(&filaB);
 		cout<<"i: "<<i<<" A: "<<filaA.size()<< " B: "<<filaB.size()<<endl;
 
-		while (i<=10) {
+		while (i<=Y) {
 
 			x = obs.obs(&filaA, &filaB);
 			if(x==0){
@@ -130,11 +132,12 @@ int main() {
 		sb += soma_b/i;
 		saida_soma =+ saida.total_saida();
 		entrada_soma =+ geradorCarro.total_generated();
-
-		m++;
 		cout <<"Tentativa: "<<m<<" "<<" A: "<<(float)soma_a/(i)<<" B: "<<(float)soma_b/(i)<<endl;
 		cout<<"Total Entrada A: "<<entrada_A<<" Total Entrada B: "<<entrada_B<<endl;;
 		cout<<"Total Saida A: "<<saida_A<<" Total Saida B: "<<saida_B<<endl;;
+
+		m++;
+
 
 
 
@@ -143,11 +146,15 @@ int main() {
 
 
 
-	cout <<"MÈdia Geral: "<<m<<" "<<" A:"<<(float)sa/m<<" B:"<<(float)sb/m<<endl;
+	cout <<"M√©dia Geral: "<<m<<" "<<" A:"<<(float)sa/m<<" B:"<<(float)sb/m<<endl;
 	cout<<"Total Saida: "<<(float)saida_soma<<" Total Entrada: "<<(float)entrada_soma<<endl;
 
 	return 0;
 }
+
+
+
+
 
 
 
